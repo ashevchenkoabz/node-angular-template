@@ -1,0 +1,28 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v1",
+    "title": "Vloggle API docs"
+  },
+  "basePath": "/api",
+  "tags":[],
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+  },
+  "definitions": {
+    "Authorization": {
+      "type": "string",
+      "name": "Authorization",
+      "required": true,
+      "description": "Put your accessToken here",
+      "in": "header"
+    },
+    "Empty": {
+      "properties": {
+      }
+    }
+  }
+}

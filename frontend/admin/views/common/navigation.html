@@ -1,0 +1,19 @@
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul side-navigation class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+
+                <div class="dropdown profile-element" dropdown>
+                     <span class="clear">
+                        <span class="block m-t-xs">
+                            <strong class="font-bold">{{ $root.profile.name }}</strong>
+                        </span>
+                    </span>
+                </div>
+            </li>
+            <li ui-sref-active="active" ng-class="{active: $state.includes('users')}">
+                <a ui-sref="default.users"><i class="fa fa-users"></i> <span class="nav-label">Users</span> </a>
+            </li>
+        </ul>
+    </div>
+</nav>

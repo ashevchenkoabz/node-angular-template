@@ -1,0 +1,148 @@
+{
+  "tags": [
+    {
+      "name": "authentication",
+      "description": "login using login&password"
+    }
+  ],
+  "paths": {
+    "/v1/signin/basic": {
+      "post": {
+        "tags": [
+          "authentication"
+        ],
+        "description": "Login user using login/password",
+        "operationId": "basic login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "JSON body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BasicLoginBody"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful response",
+            "schema": {
+              "$ref": "#/definitions/SessionStartBody"
+            }
+          },
+          "400": {
+            "description": "Invalid json/ invalid dataset",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/v1/signin/google": {
+      "post": {
+        "tags": [
+          "authentication"
+        ],
+        "description": "Login user using login/password",
+        "operationId": "basic login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "JSON body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SocialRegisterBodyOnlyToken"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful response",
+            "schema": {
+              "$ref": "#/definitions/SessionStartBody"
+            }
+          },
+          "400": {
+            "description": "Invalid json/ invalid dataset",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "BasicLoginBody": {
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "SocialRegisterBodyOnlyToken": {
+      "properties": {
+        "access_token": {
+          "type": "string"
+        }
+      }
+    },
+    "SessionStartBody": {
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "session": {
+          "$ref": "#/definitions/Session"
+        }
+      }
+    },
+    "Session": {
+      "properties": {
+        "access_token": {
+          "type": "string"
+        },
+        "refresh_token": {
+          "type": "string"
+        },
+        "expire_at": {
+          "type": "string"
+        }
+      }
+    }
+  }
+
+}

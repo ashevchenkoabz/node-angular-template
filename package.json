@@ -1,0 +1,34 @@
+{
+  "name": "PUT-PROJECT-NAME-HERE",
+  "version": "1.0.0",
+  "description": "PUT SHORT DESCRIPTION HERE",
+  "private": true,
+  "author": "Anton Shevchenko <shevchenko.ids@gmail.com>",
+  "main": "app.js",
+  "scripts": {
+    "start": "$(which node) app.js",
+    "test": "NODE_ENV=test node_modules/.bin/mocha 'test/**/*.test.js'"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "async": "~1.4.2",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.13.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.0",
+    "express-error-handler": "^1.0.1",
+    "facebook-node": "0.0.3",
+    "googleapis": "^5.2.1",
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^3.10.1",
+    "mysql": "^2.10.0",
+    "on-headers": "^1.0.0",
+    "passport": "^0.2.2",
+    "passport-token-auth": "^0.1.2",
+    "redis": "^0.12.1",
+    "request": "^2.67.0",
+    "revalidator": "^0.3.1",
+    "sequelize": "^3.23.0",
+    "winston": "^2.2.0"
+  }
+}

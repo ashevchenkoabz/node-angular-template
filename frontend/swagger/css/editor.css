@@ -1,0 +1,23 @@
+.tab-page {
+    display: none;
+    transition: all linear 0.5s;
+}
+
+.tab-page.visible {
+    display: block !important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.tab-button {
+    display: inline-block;
+    width: 100px;
+    height: 20px
+}
+
+.tab-page {
+    width: 100%;
+    height: 100%;
+}

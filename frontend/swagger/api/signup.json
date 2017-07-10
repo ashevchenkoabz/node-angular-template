@@ -1,0 +1,180 @@
+{
+  "tags": [
+    {
+      "name": "registration",
+      "description": "registration using login&password"
+    }
+  ],
+  "paths": {
+    "/v1/signup/basic": {
+      "post": {
+        "tags": [
+          "registration"
+        ],
+        "description": "Register user using email or phone",
+        "operationId": "basic registration",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "JSON body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/BasicRegisterBody"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful response",
+            "schema": {
+              "$ref": "#/definitions/SessionStartBody"
+            }
+          },
+          "400": {
+            "description": "Invalid json/ invalid dataset",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/v1/signup/google": {
+      "post": {
+        "tags": [
+          "registration"
+        ],
+        "description": "Register user using email or phone",
+        "operationId": "basic registration",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "JSON body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/SocialRegisterBody"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful response",
+            "schema": {
+              "$ref": "#/definitions/SessionStartBody"
+            }
+          },
+          "400": {
+            "description": "Invalid json/ invalid dataset",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/v1/token": {
+      "post": {
+        "tags": [
+          "registration"
+        ],
+        "description": "Update session using refresh_token",
+        "operationId": "Update session",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "JSON body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/refreshTokenBody"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "successful response",
+            "schema": {
+              "$ref": "#/definitions/SessionStartBody"
+            }
+          },
+          "400": {
+            "description": "Invalid json/ invalid dataset",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions":{
+    "BasicRegisterBody": {
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      }
+    },
+    "BasicLoginResponseBody": {
+      "properties": {
+
+      }
+    },
+    "SocialRegisterBody": {
+      "properties": {
+        "access_token": {
+          "type": "string"
+        },
+        "nickname": {
+          "type": "string"
+        }
+      }
+    },
+    "Error": {
+      "properties": {
+        "code": {
+          "type": "integer"
+        },
+        "details": {
+          "type": "string"
+        }
+      }
+    },
+    "refreshTokenBody": {
+      "properties": {
+        "refresh_token": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

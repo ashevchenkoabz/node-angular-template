@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="CR_Template">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title set in pageTitle directive -->
+    <title page-title></title>
+    <base href="/admin/">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Bootstrap -->
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+
+    <!-- Font awesome -->
+    <link href="/bower_components/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="css/plugins/progressbar/progress.css" rel="stylesheet">
+
+    <!-- Main Inspinia CSS files -->
+    <link href="css/animate.css" rel="stylesheet">
+    <link id="loadBefore" href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<!-- ControllerAs syntax -->
+<!-- Main controller with serveral data used in Inspinia theme on diferent view -->
+<body class="{{$state.current.data.specialClass}}" landing-scrollspy id="page-top">
+
+
+<div class="sk-circle in-progress" ng-show="inProgress">
+    <div class="sk-circle1 sk-child"></div>
+    <div class="sk-circle2 sk-child"></div>
+    <div class="sk-circle3 sk-child"></div>
+    <div class="sk-circle4 sk-child"></div>
+    <div class="sk-circle5 sk-child"></div>
+    <div class="sk-circle6 sk-child"></div>
+    <div class="sk-circle7 sk-child"></div>
+    <div class="sk-circle8 sk-child"></div>
+    <div class="sk-circle9 sk-child"></div>
+    <div class="sk-circle10 sk-child"></div>
+    <div class="sk-circle11 sk-child"></div>
+    <div class="sk-circle12 sk-child"></div>
+</div>
+<toaster-container></toaster-container>
+<!-- Main view  -->
+<div ui-view ng-cloak></div>
+
+
+<!-- jQuery and Bootstrap -->
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/jquery-ui/jquery-ui.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="/bower_components/moment/min/moment.min.js"></script>
+
+<!-- MetsiMenu -->
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+<!-- SlimScroll -->
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+
+<!-- Main Angular scripts-->
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="/bower_components/angular-ui-grid/ui-grid.js"></script>
+<script src="/bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script src="/bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+<script src="js/plugins/oclazyload/dist/ocLazyLoad.min.js"></script>
+<script src="/bower_components/jpkleemans-angular-validate/dist/angular-validate.min.js"></script>
+<script src="js/plugins/toastr/toastr.min.js"></script>
+
+<!-- Anglar App Script -->
+<script src="js/app.js"></script>
+<script src="js/config.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/directives.js"></script>
+
+<!--Controllers-->
+<script src="js/controllers/users/form.js"></script>
+<script src="js/controllers/users/list.js"></script>
+<script src="js/controllers/login.js"></script>
+
+
+<!--services-->
+<script src="js/services/profile.js"></script>
+<script src="js/services/users.js"></script>
+<script src="js/services/dataTable.js"></script>
+
+</body>
+</html>
