@@ -19,6 +19,8 @@ class Auth {
     static authentication(role) {
         return function (req, res, next) {
             Cache.get(req.headers.authorization, function(err, result){
+                let tokenData;
+
                 if(err) return next(err);
 
                 if(!result){
@@ -29,7 +31,7 @@ class Auth {
                 }
 
                 try {
-                    const tokenData = jwt.verify(req.headers.authorization, config.jwtKey);
+                    tokenData = jwt.verify(req.headers.authorization, config.jwtKey);
                 } catch (err) {
                     let error = new Error();
                     error.status = 401;
