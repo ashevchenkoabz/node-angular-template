@@ -21,7 +21,9 @@ class AdminController extends Controller {
     _findUser (req, res, next) {
         Models.users
             .findOne({
-                email: req.body.email
+                where: {
+                    email: req.body.email
+                }
             })
             .then(function (user) {
                 if (!user) {
